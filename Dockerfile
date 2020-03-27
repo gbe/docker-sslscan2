@@ -11,7 +11,7 @@ MAINTAINER Gregory Bellier "gregory.bellier@gmail.com"
 ENV CFLAGS "-D__USE_GNU"
 
 RUN \
-	apk --update-cache add --virtual build-dependencies git libcrypto1.1 build-base perl zlib-dev linux-headers && \
+	apk add --no-cache --virtual build-dependencies git libcrypto1.1 build-base perl zlib-dev linux-headers && \
 	git clone -b sslscan2 https://github.com/rbsec/sslscan.git && \
 	cd sslscan && \
 	make clean && \ 
@@ -19,6 +19,6 @@ RUN \
 	make install && \
 	cd / && \
 	rm -rf /sslscan && \
-	apk del build-dependencies
+	apk del --no-cache build-dependencies
 
 ENTRYPOINT ["/usr/bin/sslscan"]

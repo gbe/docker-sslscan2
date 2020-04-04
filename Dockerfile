@@ -1,6 +1,5 @@
 # vim:set ft=dockerfile:
 
-# VERSION 1.1
 # AUTHOR:         Gregory Bellier <gregory.bellier@gmail.com>
 # DESCRIPTION:    sslscan2 in a Docker container
 # TO_BUILD:       docker build --rm -t gbellier/docker-sslscan2 .
@@ -12,7 +11,7 @@ ENV CFLAGS "-D__USE_GNU"
 
 RUN \
 	apk add --no-cache --virtual build-dependencies git libcrypto1.1 build-base perl zlib-dev linux-headers && \
-	git clone -b sslscan2 https://github.com/rbsec/sslscan.git && \
+	git clone -b 2.0.0-beta1 --depth 1 https://github.com/rbsec/sslscan.git && \
 	cd sslscan && \
 	make clean && \ 
 	make static && \

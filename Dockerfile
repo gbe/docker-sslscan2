@@ -9,7 +9,7 @@ FROM alpine:3.11
 MAINTAINER Gregory Bellier "gregory.bellier@gmail.com" 
 
 RUN \
-	apk add --no-cache --virtual build-dependencies git libcrypto1.1 build-base perl zlib-dev linux-headers && \
+	apk add --no-cache --virtual build-dependencies git make perl gcc libc-dev zlib-dev linux-headers && \
 	git clone --depth 1 https://github.com/rbsec/sslscan.git && \
 	cd sslscan && \
 	make clean && \ 

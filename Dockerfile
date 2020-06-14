@@ -10,7 +10,7 @@ MAINTAINER Gregory Bellier "gregory.bellier@gmail.com"
 
 RUN \
 	apk add --no-cache --virtual build-dependencies git make perl gcc libc-dev zlib-dev linux-headers && \
-	git clone -b 2.0.0-beta2 --depth 1 https://github.com/rbsec/sslscan.git && \
+	git clone -b 2.0.0-beta3 --depth 1 https://github.com/rbsec/sslscan.git && \
 	cd sslscan && \
 	make clean && \ 
 	make static && \

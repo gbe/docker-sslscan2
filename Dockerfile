@@ -5,7 +5,7 @@
 # TO_BUILD:       docker build --rm -t gbellier/docker-sslscan2 .
 # TO_RUN:	  docker run gbellier/docker-sslscan2 www.wikipedia.org:443
 
-FROM alpine:3.12
+FROM alpine:3.13
 MAINTAINER Gregory Bellier "gregory.bellier@gmail.com" 
 
 RUN \

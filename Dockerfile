@@ -9,8 +9,8 @@ FROM alpine:3.15
 MAINTAINER Gregory Bellier "gregory.bellier@gmail.com" 
 
 RUN \
-	apk add --no-cache --virtual build-dependencies git make perl gcc libc-dev zlib-dev linux-headers && \
-	git clone -b 2.0.10 --depth 1 https://github.com/rbsec/sslscan.git && \
+	apk add --no-cache --virtual build-dependencies git make perl gcc musl-dev zlib-dev linux-headers && \
+	git clone -b 2.0.11 --depth 1 https://github.com/rbsec/sslscan.git && \
 	cd sslscan && \
 	make clean && \ 
 	make static && \
